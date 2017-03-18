@@ -4,8 +4,6 @@
 
 var React = require('react');
 
-const API_KEY = '&appid=' + '7c13a0b4ec9ce733a9faecfc4e9b6a2c';
-
 var WeatherMessage = React.createClass({
 
     render: function() {
