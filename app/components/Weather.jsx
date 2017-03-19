@@ -7,7 +7,7 @@ var Weather = React.createClass({
       getInitialState: function() {
           return {
               location: 'Miami',
-              temp: 92
+              temp: 306.48
           }
       },
 
@@ -25,11 +25,15 @@ var Weather = React.createClass({
 
       render: function () {
           var {temp, location} = this.state;
+
+          var fahrenheitTemp = ( temp * (9 / 5) ) - 459.67;
+          var displayTemp = Math.round(10 * fahrenheitTemp) / 10;
+
         return (
             <div>
                 <h3>Weather Component</h3>
                 <WeatherForm onSearch={this.handleSearch}/>
-                <WeatherMessage temp={temp} location={location}/>
+                <WeatherMessage temp={displayTemp} location={location}/>
             </div>
     )
   }

@@ -25509,7 +25509,7 @@
 	    getInitialState: function getInitialState() {
 	        return {
 	            location: 'Miami',
-	            temp: 92
+	            temp: 306.48
 	        };
 	    },
 
@@ -25530,6 +25530,10 @@
 	            temp = _state.temp,
 	            location = _state.location;
 
+
+	        var fahrenheitTemp = temp * (9 / 5) - 459.67;
+	        var displayTemp = Math.round(10 * fahrenheitTemp) / 10;
+
 	        return React.createElement(
 	            'div',
 	            null,
@@ -25539,7 +25543,7 @@
 	                'Weather Component'
 	            ),
 	            React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	            React.createElement(WeatherMessage, { temp: temp, location: location })
+	            React.createElement(WeatherMessage, { temp: displayTemp, location: location })
 	        );
 	    }
 	});
